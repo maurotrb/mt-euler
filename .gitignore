@@ -39,5 +39,7 @@ cabal-dev
 *.mtc0
 *.ptb
 *.pdf
+*.brf
+*.dbj
 # lhs2TeX
 *.tex

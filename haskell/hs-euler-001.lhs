@@ -23,7 +23,8 @@
 
 %options ghci
 
-\section{Problem 1}
+\section{Problem 1 -- Add all the natural numbers below one thousand that are multiples of 3 or 5}
+
 \subsection{Description}
 If we list all the natural numbers below 10 that are multiples of 3 or 5,
 we get 3, 5, 6 and 9. The sum of these multiples is 23.
@@ -34,25 +35,29 @@ Find the sum of all the multiples of 3 or 5 below 1000.
 The simple way is to go through all numbers from 1 to 999 and test whether
 they are divisible by 3 or by 5. In Haskell you could use list comprehension:
 \begin{code}
-solution = sum [n | n <- [1..999], n `mod` 3 == 0 || n `mod` 5 == 0]
+solution  =  sum [n | n <- [1..999], n `mod` 3 == 0 || n `mod` 5 == 0]
 \end{code}
 Evaluating |solution| you get \eval{solution}.
 
-Once resolved the problem in the simple way, you could read the solution notes
-from the site. Here, you can see that the solution could even be expressed as:
+Reading the solution notes from the project's site, we can see that the solution
+could even be expressed as:
 \begin{code}
-solution' = sum [n | n <- [1..999], n `mod` 3 == 0] +
-            sum [n | n <- [1..999], n `mod` 5 == 0] -
-            sum [n | n <- [1..999], n `mod` 15 == 0]
+solution'  =  sum [n | n <- [1..999], n `mod` 3 == 0]  +
+              sum [n | n <- [1..999], n `mod` 5 == 0]  -
+              sum [n | n <- [1..999], n `mod` 15 == 0]
 \end{code}
 
 Noting that:
 \begin{itemize}
 \item $3+6+9+12+15+\dots{}+999=3\times(1+2+3+4+\dots{}+333)$
-\item $5+10+15+\dots{}+995=5\times(1+2+....+199)$ where $199=\frac{995}{5}$ but also $\frac{999}{5}$ rounded down to the nearest integer
-\item and that from the formula for \href{http://en.wikipedia.org/wiki/Arithmetic_progression#Sum}{arithmetic series} $S_n=\frac{n}{2}(a_1+a_n)$ you could derive that $1+2+3+\dots{}+p=\frac{p}{2}(1+p)$
+\item $5+10+15+\dots{}+995=5\times(1+2+....+199)$ where $199=\frac{995}{5}$
+but also $\frac{999}{5}$ rounded down to the nearest integer
+\item and that from the expression for arithmetic series \citep{wiki:arithmeticprogression}:
+\[S_n=\frac{n}{2}(a_1+a_n)\]
+we can derive that:
+\[1+2+3+\dots{}+p=\frac{p}{2}(1+p)\]
 \end{itemize}
-You could write a more efficient solution:
+And we could write an efficient solution:
 \begin{code}
 target = 999
 
@@ -62,4 +67,3 @@ sumDivisibleBy n = n * p * (1 + p) `div` 2
 
 solution'' = sumDivisibleBy 3 + sumDivisibleBy 5 - sumDivisibleBy 15
 \end{code}
-

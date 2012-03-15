@@ -56,6 +56,14 @@
 %
 \usepackage{graphicx}
 %
+\usepackage
+[ usenames ,
+  dvipsnames ]
+{xcolor}
+%
+% Prussian Blue (Berlin Blue) (Hex: #003153) (RGB: 0, 49, 83)
+\definecolor{PrussianBlue}{RGB}{0,49,83}
+%
 % multilingual text
 \usepackage{polyglossia}
 \setdefaultlanguage[variant=american]{english}
@@ -63,12 +71,18 @@
 % hyperlinks
 \usepackage
 [ colorlinks=true ,
-  urlcolor=magenta ,
-  linkcolor=black ]
+  urlcolor=PrussianBlue ,
+  linkcolor=Black ,
+  citecolor=PrussianBlue ,
+  pdfauthor={Mauro Taraborelli} ,
+  pdftitle={Project Euler. Solutions.} ,
+  pagebackref=true ]
 {hyperref}
+%
+\usepackage[round]{natbib}
 
 \begin{document}
-\pagestyle{empty}
+\pagestyle{plain}
 
 \title{Project Euler. Solutions.}
 \author{Mauro Taraborelli\\
@@ -77,8 +91,8 @@
 \maketitle
 
 \begin{abstract}
-Notes and documentation about my attempt to solve Project Euler problems in Haskell and to learn how to use
-literate programming with \LaTeX.
+Notes and documentation about my attempt to solve Project Euler problems in
+Haskell and to learn how to use literate programming with \LaTeX.
 \end{abstract}
 
 \setcounter{tocdepth}{1}
@@ -89,4 +103,8 @@ literate programming with \LaTeX.
 
 %include hs-euler-002.lhs
 
+%include hs-euler-003.lhs
+
+\bibliographystyle{plainnat}
+\bibliography{hs-euler}
 \end{document}
