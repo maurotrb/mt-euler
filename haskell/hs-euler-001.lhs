@@ -48,16 +48,19 @@ solution'  =  sum [n | n <- [1..999], n `mod` 3 == 0]  +
 \end{code}
 
 Noting that:
-\begin{itemize}
-\item $3+6+9+12+15+\dots{}+999=3\times(1+2+3+4+\dots{}+333)$
-\item $5+10+15+\dots{}+995=5\times(1+2+....+199)$ where $199=\frac{995}{5}$
-but also $\frac{999}{5}$ rounded down to the nearest integer
-\item and that from the expression for arithmetic series \citep{wiki:arithmeticprogression}:
+\begin{align*}
+3+6+9+12+15+\dots{}+999&=3\times(1+2+3+4+\dots{}+333)\\
+5+10+15+\dots{}+995&=5\times(1+2+....+199)
+\end{align*}
+where $333=\frac{999}{3}$ and $199=\frac{995}{5}$
+but also $\frac{999}{5}$ rounded down to the nearest integer.
+
+And that from the expression for arithmetic series \citep{wiki:arithmeticprogression}:
 \[S_n=\frac{n}{2}(a_1+a_n)\]
 we can derive that:
 \[1+2+3+\dots{}+p=\frac{p}{2}(1+p)\]
-\end{itemize}
-And we could write an efficient solution:
+
+We could write an efficient solution:
 \begin{code}
 target = 999
 

@@ -80,7 +80,9 @@
 {hyperref}
 %
 \usepackage[round]{natbib}
-
+%
+\usepackage{amsmath}
+%
 \begin{document}
 \pagestyle{plain}
 
