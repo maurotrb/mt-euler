@@ -126,7 +126,7 @@ tableDeleteMinAndInsert n is t  =  deleteMinAndInsert (Iterator n is) t
 
 With the priority queue completed, we can define the sieve algorithm:
 \begin{itemize}
-\item the |sieve| function filters the input sequence and find the primes incrementallly
+\item the |sieve| function filters the input sequence and find the primes incrementally
 \item the |wheel| stream and the |spin| function allow to generate an input sequence
 without the composites of the primes 2,3,5,7; this optimization makes the sieve seven
 times faster than with a complete input sequence |[2..]|
