@@ -5,10 +5,6 @@ cabal-dev
 *.hi
 *.chi
 *.chs.h
-# Emacs
-*~
-\#*\#
-.\#*
 # Latex
 *.aux
 *.bbl
