@@ -21,9 +21,10 @@
 % THE SOFTWARE.
 %
 
-%options ghci
+\newpage
 
-\section{Problem 1 -- Add all the natural numbers below one thousand that are multiples of 3 or 5}
+\section{Problem 1 -- Add all the natural numbers below one thousand
+that are multiples of 3 or 5}
 
 \subsection{Description}
 If we list all the natural numbers below 10 that are multiples of 3 or 5,
@@ -37,7 +38,6 @@ they are divisible by 3 or by 5. In Haskell you could use list comprehension:
 \begin{code}
 solution  =  sum [n | n <- [1..999], n `mod` 3 == 0 || n `mod` 5 == 0]
 \end{code}
-Evaluating |solution| you get \eval{solution}.
 
 Reading the solution notes from the project's site, we can see that the solution
 could even be expressed as:

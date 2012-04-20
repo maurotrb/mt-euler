@@ -21,7 +21,7 @@
 % THE SOFTWARE.
 %
 
-%options ghci
+\newpage
 
 \section{Problem 2 -- By considering the terms in the Fibonacci sequence whose
 values do not exceed four million, find the sum of the even-valued terms.}
@@ -45,4 +45,3 @@ and sum the result.
 \begin{code}
 solution = (sum . filter even . takeWhile (<4000001)) fibs
 \end{code}
-Evaluating |solution| you get \eval{solution}.

@@ -33,7 +33,7 @@
 \usepackage
 [ a4paper,
   textwidth=6.5in,
-  textheight=10in,
+  textheight=9.5in,
   marginparsep=7pt,
   marginparwidth=.6in ]
 {geometry}
@@ -106,6 +106,10 @@ Haskell and to learn how to use literate programming with \LaTeX.
 %include hs-euler-002.lhs
 
 %include hs-euler-003.lhs
+
+%include hs-euler-004.lhs
+
+\newpage
 
 \bibliographystyle{plainnat}
 \bibliography{hs-euler}

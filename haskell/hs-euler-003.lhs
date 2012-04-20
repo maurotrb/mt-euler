@@ -21,7 +21,7 @@
 % THE SOFTWARE.
 %
 
-%options ghci
+\newpage
 
 \section{Problem 3 -- Find the largest prime factor of a composite number}
 \subsection{Description}
@@ -177,4 +177,3 @@ And, finally, the solution:
 \begin{code}
 solution = last $ primeFactors 600851475143
 \end{code}
-Evaluating |solution| you get \eval{solution}.
